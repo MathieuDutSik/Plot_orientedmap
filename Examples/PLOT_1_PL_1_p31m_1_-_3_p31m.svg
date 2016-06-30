@@ -1,0 +1,233 @@
+<svg height="600" width="600">
+  <defs>
+    <clipPath id="torus-clipping">
+      <rect x="0" y="0" width="600" height="600" />
+    </clipPath>
+  </defs>
+  <line x1="220" y1="438.564" x2="60" y2="161.436" style="stroke:rgb(255,0,0);stroke-width:2" clip-path="url(#torus-clipping)" />
+  <line x1="60" y1="161.436" x2="380" y2="161.436" style="stroke:rgb(255,0,0);stroke-width:2" clip-path="url(#torus-clipping)" />
+  <line x1="380" y1="161.436" x2="540" y2="438.564" style="stroke:rgb(255,0,0);stroke-width:2" clip-path="url(#torus-clipping)" />
+  <line x1="540" y1="438.564" x2="220" y2="438.564" style="stroke:rgb(255,0,0);stroke-width:2" clip-path="url(#torus-clipping)" />
+  <path d="M-19.1421 541.577 C -9.36134 542.366, 6.91443 543.622, 13.4333 544.765" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M13.4333 544.765 C 19.9522 545.907, 37.6184 550.76, 48.7416 553.796" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M300.858 541.577 C 310.639 542.366, 326.914 543.622, 333.433 544.765" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M333.433 544.765 C 339.952 545.907, 357.618 550.76, 368.742 553.796" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M140.858 264.449 C 150.639 265.238, 166.914 266.494, 173.433 267.637" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M173.433 267.637 C 179.952 268.779, 197.618 273.632, 208.742 276.668" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M460.858 264.449 C 470.639 265.238, 486.914 266.494, 493.433 267.637" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M493.433 267.637 C 499.952 268.779, 517.618 273.632, 528.742 276.668" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M300.858 541.577 C 296.082 549.849, 288.585 562.834, 285.914 567.462" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M285.914 567.462 C 283.242 572.089, 276.481 583.799, 272.343 590.966" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M620.858 541.577 C 616.082 549.849, 608.585 562.834, 605.914 567.462" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M605.914 567.462 C 603.242 572.089, 596.481 583.799, 592.343 590.966" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M140.858 264.449 C 136.082 272.721, 128.585 285.706, 125.914 290.333" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M125.914 290.333 C 123.242 294.961, 116.481 306.67, 112.343 313.838" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M460.858 264.449 C 456.082 272.721, 448.585 285.706, 445.914 290.333" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M445.914 290.333 C 443.242 294.961, 436.481 306.67, 432.343 313.838" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M300.858 -12.6788 C 296.082 -4.4068, 288.585 8.57782, 285.914 13.2053" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M285.914 13.2053 C 283.242 17.8327, 276.481 29.5423, 272.343 36.7095" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M620.858 -12.6788 C 616.082 -4.4068, 608.585 8.57782, 605.914 13.2053" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M605.914 13.2053 C 603.242 17.8327, 596.481 29.5423, 592.343 36.7095" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M300.858 541.577 C 295.284 533.502, 286.058 520.034, 281.81 514.96" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M281.81 514.96 C 277.561 509.886, 264.525 497.013, 256.335 488.897" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M620.858 541.577 C 615.284 533.502, 606.058 520.034, 601.81 514.96" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M601.81 514.96 C 597.561 509.886, 584.525 497.013, 576.335 488.897" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M140.858 264.449 C 135.284 256.373, 126.058 242.906, 121.81 237.832" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M121.81 237.832 C 117.561 232.757, 104.525 219.885, 96.3347 211.769" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M460.858 264.449 C 455.284 256.373, 446.058 242.906, 441.81 237.832" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M441.81 237.832 C 437.561 232.757, 424.525 219.885, 416.335 211.769" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M48.7416 553.796 C 57.7199 546.025, 72.8568 532.918, 79.124 527.475" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M79.124 527.475 C 85.3911 522.033, 102.055 507.537, 112.343 498.59" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M368.742 553.796 C 377.72 546.025, 392.857 532.918, 399.124 527.475" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M399.124 527.475 C 405.391 522.033, 422.055 507.537, 432.343 498.59" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M208.742 276.668 C 217.72 268.897, 232.857 255.79, 239.124 250.347" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M239.124 250.347 C 245.391 244.905, 262.055 230.408, 272.343 221.462" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M528.742 276.668 C 537.72 268.897, 552.857 255.79, 559.124 250.347" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M559.124 250.347 C 565.391 244.905, 582.055 230.408, 592.343 221.462" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M48.7416 553.796 C 49.8715 565.338, 51.7378 583.923, 51.7378 590.966" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M51.7378 590.966 C 51.7378 598.009, 49.8715 616.594, 48.7416 628.136" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M368.742 553.796 C 369.872 565.338, 371.738 583.923, 371.738 590.966" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M371.738 590.966 C 371.738 598.009, 369.871 616.594, 368.742 628.136" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M208.742 276.668 C 209.872 288.21, 211.738 306.795, 211.738 313.838" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M211.738 313.838 C 211.738 320.881, 209.872 339.466, 208.742 351.008" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M528.742 276.668 C 529.872 288.21, 531.738 306.795, 531.738 313.838" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M531.738 313.838 C 531.738 320.881, 529.872 339.466, 528.742 351.008" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M48.7416 -0.460608 C 49.8715 11.0814, 51.7378 29.6665, 51.7378 36.7095" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M51.7378 36.7095 C 51.7378 43.7526, 49.8715 62.3376, 48.7416 73.8796" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M368.742 -0.460608 C 369.872 11.0814, 371.738 29.6665, 371.738 36.7095" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M371.738 36.7095 C 371.738 43.7526, 369.872 62.3376, 368.742 73.8796" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M272.343 590.966 C 276.481 598.133, 283.242 609.843, 285.914 614.47" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M285.914 614.47 C 288.585 619.097, 296.082 632.082, 300.858 640.354" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M592.343 590.966 C 596.481 598.133, 603.242 609.843, 605.914 614.47" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M605.914 614.47 C 608.585 619.097, 616.082 632.082, 620.858 640.354" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M112.343 313.838 C 116.481 321.005, 123.242 332.714, 125.914 337.342" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M125.914 337.342 C 128.585 341.969, 136.082 354.954, 140.858 363.226" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M432.343 313.838 C 436.481 321.005, 443.242 332.714, 445.914 337.342" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M445.914 337.342 C 448.585 341.969, 456.082 354.954, 460.858 363.226" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M272.343 36.7095 C 276.481 43.8767, 283.242 55.5863, 285.914 60.2137" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M285.914 60.2137 C 288.585 64.8412, 296.082 77.8258, 300.858 86.0979" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M592.343 36.7095 C 596.481 43.8767, 603.242 55.5863, 605.914 60.2137" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M605.914 60.2137 C 608.585 64.8412, 616.082 77.8258, 620.858 86.0979" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M272.343 590.966 C 264.068 590.966, 250.546 590.966, 245.203 590.966" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M245.203 590.966 C 239.86 590.966, 224.866 590.966, 215.315 590.966" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M592.343 590.966 C 584.068 590.966, 570.546 590.966, 565.203 590.966" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M565.203 590.966 C 559.86 590.966, 544.866 590.966, 535.315 590.966" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M112.343 313.838 C 104.068 313.838, 90.5465 313.838, 85.2032 313.838" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M85.2032 313.838 C 79.8598 313.838, 64.8665 313.838, 55.3147 313.838" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M432.343 313.838 C 424.068 313.838, 410.546 313.838, 405.203 313.838" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M405.203 313.838 C 399.86 313.838, 384.866 313.838, 375.315 313.838" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M272.343 36.7095 C 264.068 36.7095, 250.546 36.7094, 245.203 36.7095" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M245.203 36.7095 C 239.86 36.7095, 224.866 36.7095, 215.315 36.7095" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M592.343 36.7095 C 584.068 36.7095, 570.546 36.7094, 565.203 36.7095" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M565.203 36.7095 C 559.86 36.7095, 544.866 36.7095, 535.315 36.7095" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M256.335 488.897 C 245.774 493.69, 228.746 501.366, 222.646 504.888" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M222.646 504.888 C 216.547 508.409, 201.385 519.318, 191.954 526.068" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M576.335 488.897 C 565.774 493.69, 548.746 501.366, 542.646 504.888" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M542.646 504.888 C 536.547 508.409, 521.385 519.318, 511.954 526.068" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M96.3347 211.769 C 85.7741 216.562, 68.7458 224.238, 62.6463 227.76" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M62.6463 227.76 C 56.5469 231.281, 41.3849 242.19, 31.9541 248.939" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M416.335 211.769 C 405.774 216.562, 388.746 224.238, 382.646 227.76" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M382.646 227.76 C 376.547 231.281, 361.385 242.19, 351.954 248.939" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M256.335 488.897 C 258.575 477.237, 262.358 457.574, 263.937 449.425" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M263.937 449.425 C 265.517 441.277, 269.74 419.597, 272.343 406.214" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M576.335 488.897 C 578.575 477.237, 582.358 457.574, 583.937 449.425" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M583.937 449.425 C 585.517 441.277, 589.74 419.597, 592.343 406.214" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M96.3347 211.769 C 98.5752 200.109, 102.358 180.446, 103.937 172.297" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M103.937 172.297 C 105.517 164.148, 109.74 142.469, 112.343 129.086" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M416.335 211.769 C 418.575 200.109, 422.358 180.446, 423.937 172.297" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M423.937 172.297 C 425.517 164.148, 429.74 142.469, 432.343 129.086" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M112.343 498.59 C 109.74 485.206, 105.517 463.527, 103.937 455.378" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M103.937 455.378 C 102.358 447.229, 98.5752 427.567, 96.3347 415.906" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M432.343 498.59 C 429.74 485.206, 425.517 463.527, 423.937 455.378" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M423.937 455.378 C 422.358 447.229, 418.575 427.567, 416.335 415.906" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M272.343 221.462 C 269.74 208.078, 265.517 186.399, 263.937 178.25" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M263.937 178.25 C 262.358 170.101, 258.575 150.439, 256.335 138.778" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M592.343 221.462 C 589.74 208.078, 585.517 186.399, 583.937 178.25" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M583.937 178.25 C 582.358 170.101, 578.575 150.439, 576.335 138.778" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M112.343 498.59 C 125.236 503.026, 146.122 510.21, 153.969 512.916" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M153.969 512.916 C 161.816 515.622, 180.735 522.178, 191.954 526.068" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M432.343 498.59 C 445.236 503.026, 466.122 510.21, 473.969 512.916" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M473.969 512.916 C 481.816 515.622, 500.735 522.178, 511.954 526.068" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M-47.6565 221.462 C -34.7642 225.898, -13.8781 233.082, -6.03099 235.788" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M-6.03099 235.788 C 1.81613 238.494, 20.7354 245.049, 31.9541 248.939" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M272.343 221.462 C 285.236 225.898, 306.122 233.082, 313.969 235.788" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M313.969 235.788 C 321.816 238.494, 340.735 245.049, 351.954 248.939" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M592.343 221.462 C 605.236 225.898, 626.122 233.082, 633.969 235.788" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M633.969 235.788 C 641.816 238.494, 660.735 245.049, 671.954 248.939" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M208.742 351.008 C 217.72 358.778, 232.857 371.885, 239.124 377.328" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M239.124 377.328 C 245.391 382.771, 262.055 397.267, 272.343 406.214" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M528.742 351.008 C 537.72 358.778, 552.857 371.885, 559.124 377.328" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M559.124 377.328 C 565.391 382.771, 582.055 397.267, 592.343 406.214" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M48.7416 73.8796 C 57.7199 81.6503, 72.8568 94.7571, 79.124 100.2" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M79.124 100.2 C 85.3911 105.643, 102.055 120.139, 112.343 129.086" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M368.742 73.8796 C 377.72 81.6503, 392.857 94.7571, 399.124 100.2" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M399.124 100.2 C 405.391 105.643, 422.055 120.139, 432.343 129.086" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M208.742 351.008 C 197.618 354.043, 179.952 358.896, 173.433 360.039" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M173.433 360.039 C 166.914 361.181, 150.639 362.437, 140.858 363.226" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M528.742 351.008 C 517.618 354.043, 499.952 358.896, 493.433 360.039" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M493.433 360.039 C 486.914 361.181, 470.639 362.437, 460.858 363.226" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M48.7416 73.8796 C 37.6184 76.9151, 19.9522 81.7681, 13.4333 82.9104" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M13.4333 82.9104 C 6.91444 84.0528, -9.36134 85.3088, -19.1421 86.0979" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M368.742 73.8796 C 357.618 76.9151, 339.952 81.7681, 333.433 82.9104" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M333.433 82.9104 C 326.914 84.0528, 310.639 85.3088, 300.858 86.0979" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M140.858 363.226 C 135.284 371.302, 126.058 384.769, 121.81 389.843" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M121.81 389.843 C 117.561 394.918, 104.525 407.791, 96.3347 415.906" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M460.858 363.226 C 455.284 371.302, 446.058 384.769, 441.81 389.843" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M441.81 389.843 C 437.561 394.918, 424.525 407.791, 416.335 415.906" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M300.858 86.0979 C 295.284 94.1738, 286.058 107.641, 281.81 112.715" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M281.81 112.715 C 277.561 117.79, 264.525 130.662, 256.335 138.778" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M620.858 86.0979 C 615.284 94.1738, 606.058 107.641, 601.81 112.715" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M601.81 112.715 C 597.561 117.79, 584.525 130.662, 576.335 138.778" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M215.315 590.966 C 211.108 599.831, 204.058 614.554, 201.787 620.771" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M201.787 620.771 C 199.517 626.987, 194.887 644.713, 191.954 655.864" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M535.315 590.966 C 531.108 599.831, 524.058 614.554, 521.787 620.771" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M521.787 620.771 C 519.517 626.987, 514.887 644.713, 511.954 655.864" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M55.3147 313.838 C 51.1076 322.703, 44.0575 337.426, 41.7874 343.643" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M41.7874 343.643 C 39.5172 349.859, 34.887 367.585, 31.9541 378.736" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M375.315 313.838 C 371.108 322.703, 364.058 337.426, 361.787 343.643" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M361.787 343.643 C 359.517 349.859, 354.887 367.585, 351.954 378.736" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M215.315 36.7095 C 211.108 45.5744, 204.058 60.2977, 201.787 66.5144" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M201.787 66.5144 C 199.517 72.7311, 194.887 90.4569, 191.954 101.608" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M535.315 36.7095 C 531.108 45.5744, 524.058 60.2977, 521.787 66.5144" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M521.787 66.5144 C 519.517 72.7311, 514.887 90.4569, 511.954 101.608" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M215.315 590.966 C 211.108 582.101, 204.058 567.378, 201.787 561.161" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M201.787 561.161 C 199.517 554.944, 194.887 537.218, 191.954 526.068" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M535.315 590.966 C 531.108 582.101, 524.058 567.378, 521.787 561.161" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M521.787 561.161 C 519.517 554.944, 514.887 537.218, 511.954 526.068" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M55.3147 313.838 C 51.1076 304.973, 44.0575 290.249, 41.7874 284.033" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M41.7874 284.033 C 39.5172 277.816, 34.887 260.09, 31.9541 248.939" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M375.315 313.838 C 371.108 304.973, 364.058 290.249, 361.787 284.033" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M361.787 284.033 C 359.517 277.816, 354.887 260.09, 351.954 248.939" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M215.315 36.7095 C 211.108 27.8446, 204.058 13.1213, 201.787 6.90461" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M201.787 6.90461 C 199.517 0.687911, 194.887 -17.0379, 191.954 -28.1887" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M535.315 36.7095 C 531.108 27.8446, 524.058 13.1213, 521.787 6.90461" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M521.787 6.90461 C 519.517 0.687911, 514.887 -17.0379, 511.954 -28.1887" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M-47.6565 406.214 C -34.7642 401.777, -13.8781 394.594, -6.03099 391.888" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M-6.03099 391.888 C 1.81612 389.181, 20.7354 382.626, 31.9541 378.736" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M272.343 406.214 C 285.236 401.777, 306.122 394.594, 313.969 391.888" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M313.969 391.888 C 321.816 389.181, 340.735 382.626, 351.954 378.736" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M592.343 406.214 C 605.236 401.777, 626.122 394.594, 633.969 391.888" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M633.969 391.888 C 641.816 389.181, 660.735 382.626, 671.954 378.736" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M112.343 129.086 C 125.236 124.649, 146.122 117.466, 153.969 114.759" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M153.969 114.759 C 161.816 112.053, 180.735 105.498, 191.954 101.608" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M432.343 129.086 C 445.236 124.649, 466.122 117.466, 473.969 114.759" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M473.969 114.759 C 481.816 112.053, 500.735 105.498, 511.954 101.608" fill="none" style="stroke:rgb(0,0,0);stroke-width:6" clip-path="url(#torus-clipping)" />
+  <path d="M96.3347 415.906 C 85.7741 411.113, 68.7458 403.437, 62.6463 399.916" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M62.6463 399.916 C 56.5469 396.394, 41.3849 385.485, 31.9541 378.736" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M416.335 415.906 C 405.774 411.113, 388.746 403.437, 382.646 399.916" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M382.646 399.916 C 376.547 396.394, 361.385 385.485, 351.954 378.736" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M256.335 138.778 C 245.774 133.985, 228.746 126.309, 222.646 122.788" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M222.646 122.788 C 216.547 119.266, 201.385 108.357, 191.954 101.608" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M576.335 138.778 C 565.774 133.985, 548.746 126.309, 542.646 122.788" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <path d="M542.646 122.788 C 536.547 119.266, 521.385 108.357, 511.954 101.608" fill="none" style="stroke:rgb(0,0,0);stroke-width:1" clip-path="url(#torus-clipping)" />
+  <ellipse cx="300.858" cy="541.577" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="140.858" cy="264.449" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="460.858" cy="264.449" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="48.7416" cy="553.796" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="368.742" cy="553.796" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="208.742" cy="276.668" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="528.742" cy="276.668" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="272.343" cy="590.966" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="592.343" cy="590.966" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="112.343" cy="313.838" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="432.343" cy="313.838" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="272.343" cy="36.7095" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="592.343" cy="36.7095" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="256.335" cy="488.897" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="576.335" cy="488.897" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="96.3347" cy="211.769" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="416.335" cy="211.769" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="112.343" cy="498.59" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="432.343" cy="498.59" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="272.343" cy="221.462" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="592.343" cy="221.462" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="208.742" cy="351.008" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="528.742" cy="351.008" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="48.7416" cy="73.8796" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="368.742" cy="73.8796" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="140.858" cy="363.226" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="460.858" cy="363.226" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="300.858" cy="86.0979" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="215.315" cy="590.966" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="535.315" cy="590.966" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="55.3147" cy="313.838" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="375.315" cy="313.838" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="215.315" cy="36.7095" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="535.315" cy="36.7095" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="191.954" cy="526.068" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="511.954" cy="526.068" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="31.9541" cy="248.939" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="351.954" cy="248.939" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="272.343" cy="406.214" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="592.343" cy="406.214" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="112.343" cy="129.086" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="432.343" cy="129.086" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="96.3347" cy="415.906" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="416.335" cy="415.906" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="256.335" cy="138.778" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="576.335" cy="138.778" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="31.9541" cy="378.736" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="351.954" cy="378.736" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="191.954" cy="101.608" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+  <ellipse cx="511.954" cy="101.608" rx="3" ry="3"  style="fill:rgb(0,0,0)" clip-path="url(#torus-clipping)" />
+</svg>

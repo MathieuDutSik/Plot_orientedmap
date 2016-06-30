@@ -1,0 +1,59 @@
+&PLOT
+ PlaneFile = "PLOT_2_PL_2_p2mg_2_-_1_pg.plane",
+ OutFile = "PLOT_2_PL_2_p2mg_2_-_1_pg.svg",
+ MAX_ITER_PrimalDual = -1,
+ MAX_ITER_CaGe = 1000,
+ CaGeProcessPolicy = 2,
+ RoundMethod = 2,
+ width = 600,
+ height = 600,
+ MethodInsert = 2,
+ ListExportFormat = "eps",
+/
+
+
+&EDGE
+ DoMethod1 = .T.,
+ DoMethod2 = .F.,
+ DoMethod3 = .F.,
+ MultTangent = 0.5,
+ NormalTraitSize = 1,
+ ListTraitIDE = 1,6,2,9,7,18,11,27,13,29,14,30,19,39,20,35,28,45,32,34,37,41,38,47,40,43,44,46,
+ ListTraitGroup = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ ListTraitSize = 6,
+ DefaultRGB = 0,0,0,
+ SpecificRGB_iDE = ,
+ SpecificRGB_Group = ,
+ SpecificRGB_R = ,
+ SpecificRGB_G = ,
+ SpecificRGB_B = ,
+/
+
+
+&VERT
+ NormalRadius = 0.005,
+ ListRadiusIDE = ,
+ ListRadiusGroup = ,
+ ListRadius = ,
+ DefaultRGB = 0,0,0,
+ SpecificRGB_iDE = ,
+ SpecificRGB_Group = ,
+ SpecificRGB_R = ,
+ SpecificRGB_G = ,
+ SpecificRGB_B = ,
+/
+
+
+&TORUS
+ minimal = 1e-11,
+ tol = 1e-05,
+ AngDeg = 0,
+ scal = 0.5,
+ shiftX = 0,
+ shiftY = 0,
+ FundamentalRGB = 255,0,0,
+ FundamentalTraitSize = 2,
+ DrawFundamentalDomain = .T.,
+/
+
+

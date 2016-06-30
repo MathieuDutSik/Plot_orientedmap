@@ -1,0 +1,49 @@
+&PLOT
+ PlaneFile = "PLOT_2_PL_6_Oh_2_-_1_S6.plane",
+ OutFile = "PLOT_2_PL_6_Oh_2_-_1_S6.svg",
+ ViewFile = "PLOT_2_PL_6_Oh_2_-_1_S6.view",
+ MAX_ITER_PrimalDual = -1,
+ MAX_ITER_CaGe = 1000,
+ CaGeProcessPolicy = 2,
+ RoundMethod = 2,
+ width = 600,
+ height = 600,
+ MethodInsert = 2,
+/
+
+
+&EDGE
+ DoMethod1 = .T.,
+ DoMethod2 = .F.,
+ DoMethod3 = .F.,
+ MultTangent = 0.5,
+ NormalTraitSize = 1,
+ ListTraitIDE = 0,15,1,16,2,27,3,18,4,19,5,20,6,21,7,22,8,23,9,24,10,25,11,13,28,40,29,42,30,43,31,44,32,45,33,46,34,47,35,48,36,38,50,61,51,71,52,63,53,64,54,65,55,66,56,67,57,68,58,69,72,78,73,79,74,80,82,87,83,91,84,89,
+ ListTraitGroup = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ ListTraitSize = 4,
+ DefaultRGB = 0,0,0,
+ SpecificRGB_iDE = ,
+ SpecificRGB_Group = ,
+ SpecificRGB_R = ,
+ SpecificRGB_G = ,
+ SpecificRGB_B = ,
+ DoExternalArrow = .T.,
+ ScalExtensionArrow = 2,
+ LengthExtensionArrow = 0.5,
+/
+
+
+&VERT
+ NormalRadius = 0.005,
+ ListRadiusIDE = ,
+ ListRadiusGroup = ,
+ ListRadius = ,
+ DefaultRGB = 0,0,0,
+ SpecificRGB_iDE = ,
+ SpecificRGB_Group = ,
+ SpecificRGB_R = ,
+ SpecificRGB_G = ,
+ SpecificRGB_B = ,
+/
+
+

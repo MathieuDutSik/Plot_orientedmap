@@ -1,0 +1,49 @@
+&PLOT
+ PlaneFile = "PLOT_1_PL_2_D3d_1_-_1_S6.plane",
+ OutFile = "PLOT_1_PL_2_D3d_1_-_1_S6.svg",
+ ViewFile = "PLOT_1_PL_2_D3d_1_-_1_S6.view",
+ MAX_ITER_PrimalDual = -1,
+ MAX_ITER_CaGe = 1000,
+ CaGeProcessPolicy = 2,
+ RoundMethod = 2,
+ width = 600,
+ height = 600,
+ MethodInsert = 2,
+/
+
+
+&EDGE
+ DoMethod1 = .T.,
+ DoMethod2 = .F.,
+ DoMethod3 = .F.,
+ MultTangent = 0.5,
+ NormalTraitSize = 1,
+ ListTraitIDE = 1,6,2,9,7,15,8,18,10,13,14,21,16,24,19,30,20,33,22,36,23,39,25,42,31,45,32,48,34,51,35,54,38,60,40,63,41,66,43,68,46,69,49,75,52,81,55,62,64,87,65,90,67,93,70,95,76,92,82,89,
+ ListTraitGroup = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ ListTraitSize = 4,
+ DefaultRGB = 0,0,0,
+ SpecificRGB_iDE = ,
+ SpecificRGB_Group = ,
+ SpecificRGB_R = ,
+ SpecificRGB_G = ,
+ SpecificRGB_B = ,
+ DoExternalArrow = .T.,
+ ScalExtensionArrow = 2,
+ LengthExtensionArrow = 0.5,
+/
+
+
+&VERT
+ NormalRadius = 0.005,
+ ListRadiusIDE = ,
+ ListRadiusGroup = ,
+ ListRadius = ,
+ DefaultRGB = 0,0,0,
+ SpecificRGB_iDE = ,
+ SpecificRGB_Group = ,
+ SpecificRGB_R = ,
+ SpecificRGB_G = ,
+ SpecificRGB_B = ,
+/
+
+
