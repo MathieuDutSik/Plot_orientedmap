@@ -613,6 +613,17 @@ TD_description TD_CaGeProcessOptimization(TD_description const& eDesc, int const
 }
 
 
+template<typename T>
+T L1_norm(MyVector<T> const& V)
+{
+  int len=V.size();
+  T eNorm = 0;
+  for (int i=0; i<len; i++)
+    eNorm += T_abs(V(i));
+  return eNorm;
+}
+
+
 TD_description TD_FindDescription(PlanGraphOriented const& PL, double const& minimal, int const& MAX_ITERATIONS, double const& tol)
 {
   permlib::Permutation eInv=PL.invers;

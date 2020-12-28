@@ -3,8 +3,8 @@
 
 
 #include "GroupFct.h"
-#include "Combinatorics.h"
-#include "GraphicalBasic.h"
+#include "COMB_Combinatorics.h"
+#include "GRAPH_GraphicalBasic.h"
 
 
 struct PlanGraphOriented {

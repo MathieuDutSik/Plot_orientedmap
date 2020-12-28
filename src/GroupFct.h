@@ -6,7 +6,7 @@
 #include "Basic_file.h"
 #include "Basic_string.h"
 #include "NumberTheory.h"
-#include "Face_bitset.h"
+#include "Boost_bitset.h"
 
 
 #include <permlib/permlib_api.h>
