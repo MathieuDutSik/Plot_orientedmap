@@ -16,7 +16,7 @@ std::vector<double> TD_EvaluatePosition(std::vector<double> const& ListRadius, T
   std::vector<double> ListDefect(nbVert);
   for (int iVert=0; iVert<nbVert; iVert++) {
     double H=M_PI;
-    std::vector<int> ListAdj=eG.Adjacency(iVert);
+    std::vector<size_t> ListAdj=eG.Adjacency(iVert);
     for (auto & jVert : ListAdj)
       H -= atan(ListRadius[jVert] / ListRadius[iVert]);
     ListDefect[iVert]=H;
@@ -143,38 +143,31 @@ void PLANE_FindCoordinates(SystemSolution & eSol, int const& MAX_ITERATIONS, std
       coor v_b = eSol.ListVert[b].v;
       coor v_c = eSol.ListVert[c].v;
       //      std::cerr << "After coor v_a, v_b and v_c assignations\n";
-      
+
       double area = 0.5 * (   ( v_b.y - v_a.y ) * ( v_c.x - v_a.x )
 			      - ( v_b.x - v_a.x ) * ( v_c.y - v_a.y ) );
       ListArea[iTrig]=area;
       double koef = AreaToKoef(area);
-      /*
-	koef *= koef;
-	koef *= koef;
-	koef *= koef;
-      */
-      
+
       center.x = ( v_a.x + v_b.x + v_c.x ) / 3.0;
       center.y = ( v_a.y + v_b.y + v_c.y ) / 3.0;
-      
+
       eSol.ListVert[a].disp.x += koef * (center.x - v_a.x);
       eSol.ListVert[a].disp.y += koef * (center.y - v_a.y);
-      
+
       eSol.ListVert[b].disp.x += koef * (center.x - v_b.x);
       eSol.ListVert[b].disp.y += koef * (center.y - v_b.y);
-      
+
       eSol.ListVert[c].disp.x += koef * (center.x - v_c.x);
       eSol.ListVert[c].disp.y += koef * (center.y - v_c.y);
     }
     //    std::cerr << "After triangle loop\n";
-    
+
     double temp = 40.0 / exp( 4.0 * (double)step / ( (step<250) ? 250 : (step+1) ) );
     //    std::cerr << "temp=" << temp << "\n";
-    double Sumd=0;
     for (int i = 0; i < nvertices; i++) {
       if (eSol.ListVert[i].fixed == false) {
 	double d = norm(eSol.ListVert[i].disp);
-	Sumd += d;
 	double koef;
 	if (d > temp)
 	  koef = temp / d;
@@ -248,7 +241,6 @@ PLANE_plot_infos PLANE_ComputeCoordinateVertices(VEForiented const& VEFori, std:
       idx++;
     }
   int nbFace=VEFori.nbFace;
-  int nbTriangle=0;
   std::vector<int> ListStatusFace(nbFace);
   std::vector<int> ListTriangles;
   for (int iFace=0; iFace<nbFace; iFace++) {
@@ -262,7 +254,6 @@ PLANE_plot_infos PLANE_ComputeCoordinateVertices(VEForiented const& VEFori, std:
       int iVert=VEFori.ListOriginVert[iDE];
       eCorrVal *= ListStatus[iVert];
     }
-    nbTriangle += eCorrVal;
     ListStatusFace[iFace]=eCorrVal;
     if (eCorrVal == 1) {
       for (int i=0; i<3; i++) {
@@ -303,7 +294,7 @@ TD_result TD_NewtonMethod(Tgr const& eG, std::vector<double> const& ListRadius)
   //  std::cerr << "TD_NewtonMethod, step 1\n";
   for (int uVert=0; uVert<nbVert; uVert++) {
     double rad1=ListRadius[uVert];
-    std::vector<int> ListAdj=eG.Adjacency(uVert);
+    std::vector<size_t> ListAdj=eG.Adjacency(uVert);
     double eDelta=M_PI;
     for (auto & vVert : ListAdj) {
       double rad2=ListRadius[vVert];
@@ -541,7 +532,7 @@ TD_description TD_CaGeProcessOptimization(TD_description const& eDesc, int const
       std::cerr << " f" << i << "=" << eNB;
   }
   std::cerr << "\n";
-  
+
   std::vector<coor> ListCoord=eDesc.ListCoord;
   std::vector<double> ListArea(nbFace);
   MyMatrix<double> DispMat(nbVert,2);
@@ -586,7 +577,7 @@ TD_description TD_CaGeProcessOptimization(TD_description const& eDesc, int const
 	DispMat(a,1) += koef * (center.y - v_a.y);
       }
     }
-    
+
     double temp = 40.0 / exp( 4.0 * (double)step / ( (step<250) ? 250 : (step+1) ) );
     for (int i = 0; i < nbVert; i++) {
       coor vec{DispMat(i,0),DispMat(i,1)};
@@ -624,13 +615,14 @@ T L1_norm(MyVector<T> const& V)
 }
 
 
-TD_description TD_FindDescription(PlanGraphOriented const& PL, double const& minimal, int const& MAX_ITERATIONS, double const& tol)
+template<typename Telt>
+TD_description TD_FindDescription(PlanGraphOriented<Telt> const& PL, double const& minimal, int const& MAX_ITERATIONS, double const& tol)
 {
-  permlib::Permutation eInv=PL.invers;
-  permlib::Permutation eNext=PL.next;
-  permlib::Permutation ePrev=~eNext;
-  int nbP=PL.nbP;
-  auto VEFori=PlanGraphOrientedToVEF(PL);
+  Telt eInv = PL.invers;
+  Telt eNext = PL.next;
+  Telt ePrev = Inverse(eNext);
+  int nbP = PL.nbP;
+  auto VEFori = PlanGraphOrientedToVEF(PL);
   int nbVert=VEFori.nbVert;
   GraphSparseImmutable eG=PlanGraphOrientedToGSI(VEFori);
   TD_result eRes=TD_SeveralMinimization(eG, minimal, MAX_ITERATIONS);
@@ -669,7 +661,7 @@ TD_description TD_FindDescription(PlanGraphOriented const& PL, double const& min
   std::cerr << "Before determination of all the positions\n";
   auto AngNormalization=[](double const& x) -> double {
     double xRet = x;
-    while(1) {
+    while(true) {
       bool DoOper=false;
       if (xRet < -M_PI) {
 	DoOper=true;
@@ -679,11 +671,12 @@ TD_description TD_FindDescription(PlanGraphOriented const& PL, double const& min
 	DoOper=true;
 	xRet -= 2*M_PI;
       }
-      if (DoOper == false)
+      if (DoOper == false) {
 	return xRet;
+      }
     }
   };
-  while(1) {
+  while(true) {
     int nbOper=0;
     for (int iVert=0; iVert<nbVert; iVert++)
       if (ListStatus[iVert] == 1) {
@@ -701,7 +694,7 @@ TD_description TD_FindDescription(PlanGraphOriented const& PL, double const& min
 	  double NewX=eX + dist*cos(eA);
 	  double NewY=eY + dist*sin(eA);
 	  double NewA=eA + M_PI;
-	  if (ListStatus[jVert] == 0) 
+	  if (ListStatus[jVert] == 0)
 	    SetOneVertex(rDE, NewX, NewY, NewA);
 	  double deltaX = NewX - ListCoordDE(rDE,0);
 	  double deltaY = NewY - ListCoordDE(rDE,1);
@@ -769,10 +762,11 @@ TD_description TD_FindDescription(PlanGraphOriented const& PL, double const& min
 	  MyVector<double> eCoord=Hinv*ListV[k];
 	  double delta=fabs(eCoord(0) - round(eCoord(0))) + fabs(eCoord(1) - round(eCoord(1)));
 	  sumDeltaErr += delta;
-	  if (delta > tol)
-	    test=false;
+	  if (delta > tol) {
+	    test = false;
+          }
 	}
-      //      std::cerr << "Vect(i/j)=" << iVect << " / " << jVect << " sumDeltaErr=" << sumDeltaErr << "\n";
+      std::cerr << "Vect(i/j)=" << iVect << " / " << jVect << " sumDeltaErr=" << sumDeltaErr << "\n";
       if (test && eDefect < eScalChosen) {
 	FindOneBasis=true;
 	TheBasis = TheMat;

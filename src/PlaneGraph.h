@@ -6,20 +6,22 @@
 #include "COMB_Combinatorics.h"
 #include "GRAPH_GraphicalBasic.h"
 
-
+template<typename Telt>
 struct PlanGraphOriented {
   int nbP;
-  permlib::Permutation invers;
-  permlib::Permutation next;
+  Telt invers;
+  Telt next;
 };
 
 
+template<typename Telt>
 PlanGraphOriented ReadPlanGraphOrientedStream(std::istream & is)
 {
+  using Tidx = typename Telt::Tidx;
   int nbP;
   is >> nbP;
-  std::vector<permlib::dom_int> eListInv(nbP);
-  std::vector<permlib::dom_int> eListNext(nbP);
+  std::vector<Tidx> eListInv(nbP);
+  std::vector<Tidx> eListNext(nbP);
   for (int i=0; i<nbP; i++) {
     int eVal;
     is >> eVal;
@@ -30,19 +32,23 @@ PlanGraphOriented ReadPlanGraphOrientedStream(std::istream & is)
     is >> eVal;
     eListNext[i]=eVal;
   }
-  return {nbP, permlib::Permutation(eListInv), permlib::Permutation(eListNext)};
+  Telt invers(eListInv);
+  Telt next(eListNext);
+  return {nbP, invers, next};
 }
 
 
-PlanGraphOriented ReadPlanGraphOrientedFile(std::string const& eFile)
+template<typename Telt>
+PlanGraphOriented<Telt> ReadPlanGraphOrientedFile(std::string const& eFile)
 {
   std::ifstream is(eFile);
-  return ReadPlanGraphOrientedStream(is);
+  return ReadPlanGraphOrientedStream<Telt>(is);
 }
 
 
+template<typename Telt>
 struct VEForiented {
-  PlanGraphOriented PLori;
+  PlanGraphOriented<Telt> PLori;
   int nbVert;
   int nbEdge;
   int nbFace;
@@ -150,22 +156,19 @@ struct DEvertface {
   int nat;
 };
 
-
-VEForiented PlanGraphOrientedToVEF(PlanGraphOriented const& PL)
+template<typename Telt>
+VEForiented<Telt> PlanGraphOrientedToVEF(PlanGraphOriented<Telt> const& PL)
 {
-  permlib::Permutation eInv=PL.invers;
-  permlib::Permutation eNext=PL.next;
-  permlib::Permutation ePrev=~eNext;
-  permlib::Permutation eFacePerm=eInv*ePrev;
-  std::vector<int> ListOriginVert=PermutationOrbit(eNext);
-  std::vector<int> ListOriginEdge=PermutationOrbit(eInv);
-  std::vector<int> ListOriginFace=PermutationOrbit(eFacePerm);
-  //  std::vector<std::vector<int> > VertSet=ConvertListOriginToListList(ListOriginVert);
-  //  std::vector<std::vector<int> > EdgeSet=ConvertListOriginToListList(ListOriginEdge);
-  //  std::vector<std::vector<int> > FaceSet=ConvertListOriginToListList(ListOriginFace);
-  std::vector<std::vector<int> > VertSet=GetListOrbit(ListOriginVert, eNext);
-  std::vector<std::vector<int> > EdgeSet=GetListOrbit(ListOriginEdge, eInv);
-  std::vector<std::vector<int> > FaceSet=GetListOrbit(ListOriginFace, eFacePerm);
+  Telt const& eInv = PL.invers;
+  Telt const& eNext = PL.next;
+  Telt ePrev = Inverse(eNext);
+  Telt eFacePerm = eInv * ePrev;
+  std::vector<int> ListOriginVert = PermutationOrbit(eNext);
+  std::vector<int> ListOriginEdge = PermutationOrbit(eInv);
+  std::vector<int> ListOriginFace = PermutationOrbit(eFacePerm);
+  std::vector<std::vector<int> > VertSet = GetListOrbit(ListOriginVert, eNext);
+  std::vector<std::vector<int> > EdgeSet = GetListOrbit(ListOriginEdge, eInv);
+  std::vector<std::vector<int> > FaceSet = GetListOrbit(ListOriginFace, eFacePerm);
   int nbVert=VertSet.size();
   int nbEdge=EdgeSet.size();
   int nbFace=FaceSet.size();
@@ -175,21 +178,21 @@ VEForiented PlanGraphOrientedToVEF(PlanGraphOriented const& PL)
       ListOriginVert, ListOriginEdge, ListOriginFace};
 }
 
-
-int EulerPoincareCharacteristic(PlanGraphOriented const& PL)
+template<typename Telt>
+int EulerPoincareCharacteristic(PlanGraphOriented<Telt> const& PL)
 {
-  auto VEFori=PlanGraphOrientedToVEF(PL);
-  int nbVertPL=VEFori.nbVert;
-  int nbEdgePL=VEFori.nbEdge;
-  int nbFacePL=VEFori.nbFace;
-  int Charac=nbVertPL - nbEdgePL + nbFacePL;
+  auto VEFori = PlanGraphOrientedToVEF(PL);
+  int nbVertPL = VEFori.nbVert;
+  int nbEdgePL = VEFori.nbEdge;
+  int nbFacePL = VEFori.nbFace;
+  int Charac = nbVertPL - nbEdgePL + nbFacePL;
   return Charac;
 }
 
-
-void PrintInformationOfMap(std::ostream & os, PlanGraphOriented const& PL)
+template<typename Telt>
+void PrintInformationOfMap(std::ostream & os, PlanGraphOriented<Telt> const& PL)
 {
-  VEForiented VEFori=PlanGraphOrientedToVEF(PL);
+  VEForiented<Telt> VEFori = PlanGraphOrientedToVEF(PL);
   std::vector<int> VertLen;
   for (auto & eVert : VEFori.VertSet)
     VertLen.push_back(int(eVert.size()));
@@ -229,11 +232,13 @@ struct PairWythoff123 {
 };
 
 
-PairWythoff123 GetWythoff123(PlanGraphOriented const& PL)
+template<typename Telt>
+PairWythoff123 GetWythoff123(PlanGraphOriented<Telt> const& PL)
 {
+  using Tidx = typename Telt::Tidx;
   int nbP=PL.nbP;
-  permlib::Permutation eNext=PL.next;
-  permlib::Permutation ePrev=~eNext;
+  Telt eNext=PL.next;
+  Telt ePrev = Inverse(eNext);
   int nbPtotal=6*nbP;
   std::vector<DEorder> ListDE(nbPtotal);
   std::vector<int> ListSide(nbPtotal);
@@ -268,8 +273,8 @@ PairWythoff123 GetWythoff123(PlanGraphOriented const& PL)
     throw TerminalException{1};
     //    exit(1);
   };
-  std::vector<permlib::dom_int> NewNext(nbDEnew);
-  std::vector<permlib::dom_int> NewInv (nbDEnew);
+  std::vector<Tidx> NewNext(nbDEnew);
+  std::vector<Tidx> NewInv (nbDEnew);
   for (int iDEnew=0; iDEnew<nbDEnew; iDEnew++) {
     DEorder eDE=ListDE[iDEnew];
     DEorder eDEnext = eDE;
@@ -296,8 +301,8 @@ PairWythoff123 GetWythoff123(PlanGraphOriented const& PL)
     NewNext[iDEnew]=posNext;
     NewInv [iDEnew]=posInv;
   }
-  permlib::Permutation NewPermNext(NewNext);
-  permlib::Permutation NewPermInv (NewInv);
+  Telt NewPermNext(NewNext);
+  Telt NewPermInv (NewInv);
   PlanGraphOriented PLnew{nbDEnew, NewPermInv, NewPermNext};
   return {PLnew, ListDE, OldToNew, ListDir, ListSide, SmallMat};
 }
@@ -501,9 +506,9 @@ InfoVertFaceGraph VertFaceGraphOriented(PlanGraphOriented const& PL)
     eListNext[iP]=permlib::dom_int(DEvertface_to_int(nextDE));
     eListInv [iP]=permlib::dom_int(DEvertface_to_int(invDE));
   }
-  permlib::Permutation NewPermNext(eListNext);
-  permlib::Permutation NewPermInv (eListInv);
-  PlanGraphOriented PLnew{NewNbP, NewPermInv, NewPermNext};
+  Telt NewPermNext(eListNext);
+  Telt NewPermInv (eListInv);
+  PlanGraphOriented<Telt> PLnew{NewNbP, NewPermInv, NewPermNext};
   return {PLnew, NewListDE, OldToNew};
 }
 
@@ -538,12 +543,13 @@ GraphSparseImmutable PlanGraphOrientedToGSI(VEForiented const& VEFori)
 }
 
 
-std::vector<int> GetCycleAdjacent(VEForiented const& VEFori, std::vector<int> const& ListVertRemove)
+template<typename Telt>
+std::vector<int> GetCycleAdjacent(VEForiented<Telt> const& VEFori, std::vector<int> const& ListVertRemove)
 {
-  permlib::Permutation eNext=VEFori.PLori.next;
-  permlib::Permutation ePrev=~eNext;
-  permlib::Permutation eInv=VEFori.PLori.invers;
-  permlib::Permutation FaceNext=eInv*ePrev;
+  Telt eNext = VEFori.PLori.next;
+  Telt ePrev = Inverse(eNext);
+  Telt eInv = VEFori.PLori.invers;
+  Telt FaceNext = eInv * ePrev;
   GraphSparseImmutable eG=PlanGraphOrientedToGSI(VEFori);
   std::vector<int> TotalListDEoriginating;
   for (int const& eVert : ListVertRemove) {

@@ -1,3 +1,6 @@
 [submodule "basic_common_cpp"]
 	path = basic_common_cpp
 	url = https://github.com/MathieuDutSik/basic_common_cpp
+[submodule "permutalib"]
+	path = permutalib
+	url = https://github.com/MathieuDutSik/permutalib
