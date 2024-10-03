@@ -1,14 +1,12 @@
 #ifndef INCLUDE_GroupFct_h
 #define INCLUDE_GroupFct_h
 
-
 #include "Temp_common.h"
 #include "Basic_file.h"
 #include "Basic_string.h"
-#include "NumberTheory.h"
 #include "Boost_bitset.h"
 
-templace<typename Telt>
+template<typename Telt>
 std::vector<int> PermutationOrbit(Telt const& ePerm)
 {
   int siz=ePerm.size();
@@ -20,12 +18,12 @@ std::vector<int> PermutationOrbit(Telt const& ePerm)
 	return i;
     return -1;
   };
-  while(1) {
+  while(true) {
     int iPoint=GetUnsetPoint();
     if (iPoint == -1)
       break;
     int iPointWork=iPoint;
-    while(1) {
+    while(true) {
       StatusOrbit[iPointWork]=idxOrbit;
       iPointWork = ePerm.at(iPointWork);
       if (iPointWork == iPoint) {
