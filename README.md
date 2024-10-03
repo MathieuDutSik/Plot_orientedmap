@@ -39,7 +39,6 @@ Following dependencies are needed for compiling the code:
 
   * Eigen: http://eigen.tuxfamily.org/
   * Boost: http://www.boost.org/
-  * GNU MultiPrecision Library (GMP): https://gmplib.org/
 
 Other dependencies are needed but are integrated into the repository:
 

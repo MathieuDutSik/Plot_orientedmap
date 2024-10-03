@@ -15,7 +15,7 @@ struct PlanGraphOriented {
 
 
 template<typename Telt>
-PlanGraphOriented ReadPlanGraphOrientedStream(std::istream & is)
+PlanGraphOriented<Telt> ReadPlanGraphOrientedStream(std::istream & is)
 {
   using Tidx = typename Telt::Tidx;
   int nbP;
@@ -72,7 +72,8 @@ std::vector<std::vector<int> > ConvertListOriginToListList(std::vector<int> cons
 }
 
 
-std::vector<std::vector<int> > GetListOrbit(std::vector<int> const& ListOrig, permlib::Permutation const& ePerm)
+template<typename Telt>
+std::vector<std::vector<int> > GetListOrbit(std::vector<int> const& ListOrig, Telt const& ePerm)
 {
   int nbDE=ListOrig.size();
   int nbOrbit = 1 + VectorMax(ListOrig);
@@ -222,8 +223,9 @@ void PrintInformationOfMap(std::ostream & os, PlanGraphOriented<Telt> const& PL)
 }
 
 
+template<typename Telt>
 struct PairWythoff123 {
-  PlanGraphOriented PL;
+  PlanGraphOriented<Telt> PL;
   std::vector<DEorder> ListDE;
   MyMatrix<int> OldToNew;
   std::vector<int> ListDir;
@@ -233,7 +235,7 @@ struct PairWythoff123 {
 
 
 template<typename Telt>
-PairWythoff123 GetWythoff123(PlanGraphOriented<Telt> const& PL)
+PairWythoff123<Telt> GetWythoff123(PlanGraphOriented<Telt> const& PL)
 {
   using Tidx = typename Telt::Tidx;
   int nbP=PL.nbP;
@@ -303,21 +305,23 @@ PairWythoff123 GetWythoff123(PlanGraphOriented<Telt> const& PL)
   }
   Telt NewPermNext(NewNext);
   Telt NewPermInv (NewInv);
-  PlanGraphOriented PLnew{nbDEnew, NewPermInv, NewPermNext};
+  PlanGraphOriented<Telt> PLnew{nbDEnew, NewPermInv, NewPermNext};
   return {PLnew, ListDE, OldToNew, ListDir, ListSide, SmallMat};
 }
 
-
+template<typename Telt>
 struct PairVertexInsert {
-  PlanGraphOriented PL;
+  PlanGraphOriented<Telt> PL;
   std::vector<DupliEdge> ListDE;
   MyMatrix<int> OldToNew;
   std::vector<int> ListSide;
 };
 
 
-PairVertexInsert InsertVertexAllEdges(PlanGraphOriented const& PL)
+template<typename Telt>
+PairVertexInsert<Telt> InsertVertexAllEdges(PlanGraphOriented<Telt> const& PL)
 {
+  using Tidx = typename Telt::Tidx;
   int nbP=PL.nbP;
   int nbPtotal=2*nbP;
   std::vector<DupliEdge> ListDE(nbPtotal);
@@ -340,8 +344,8 @@ PairVertexInsert InsertVertexAllEdges(PlanGraphOriented const& PL)
     throw TerminalException{1};
     //    exit(1);
   };
-  std::vector<permlib::dom_int> NewNext(nbDEnew);
-  std::vector<permlib::dom_int> NewInv (nbDEnew);
+  std::vector<Tidx> NewNext(nbDEnew);
+  std::vector<Tidx> NewInv (nbDEnew);
   for (int iDEnew=0; iDEnew<nbDEnew; iDEnew++) {
     DupliEdge eDE=ListDE[iDEnew];
     DupliEdge eDEnext, eDEinv;
@@ -358,26 +362,27 @@ PairVertexInsert InsertVertexAllEdges(PlanGraphOriented const& PL)
     NewNext[iDEnew]=posNext;
     NewInv [iDEnew]=posInv;
   }
-  permlib::Permutation NewPermNext(NewNext);
-  permlib::Permutation NewPermInv (NewInv);
-  PlanGraphOriented PLnew{nbDEnew, NewPermInv, NewPermNext};
+  Telt NewPermNext(NewNext);
+  Telt NewPermInv (NewInv);
+  PlanGraphOriented<Telt> PLnew{nbDEnew, NewPermInv, NewPermNext};
   return {PLnew, ListDE, OldToNew, ListSide};
 }
 
-
+template<typename Telt>
 struct InfoDualMedialGraph {
-  PlanGraphOriented PL;
+  PlanGraphOriented<Telt> PL;
   std::vector<DualMedialDE> ListDE;
   MyMatrix<int> MappingDE;
   MyMatrix<int> DecomposeOldDE;
 };
 
-
-InfoDualMedialGraph DualMedialGraphOriented(PlanGraphOriented const& PL)
+template<typename Telt>
+InfoDualMedialGraph<Telt> DualMedialGraphOriented(PlanGraphOriented<Telt> const& PL)
 {
-  permlib::Permutation eNext=PL.next;
-  permlib::Permutation ePrev=~eNext;
-  permlib::Permutation eInv =PL.invers;
+  using Tidx = typename Telt::Tidx;
+  Telt eNext = PL.next;
+  Telt ePrev = Inverse(eNext);
+  Telt eInv =PL.invers;
   int nbP=PL.nbP;
   auto DualMedialDE_to_int=[&](DualMedialDE const& eDE) -> int {
     if (eDE.stat == 1)
@@ -409,8 +414,8 @@ InfoDualMedialGraph DualMedialGraphOriented(PlanGraphOriented const& PL)
   std::vector<DualMedialDE> NewListDE(NewNbP);
   for (int i=0; i<NewNbP; i++)
     NewListDE[i]=int_to_DualMediaDE(i);
-  std::vector<permlib::dom_int> eListNext(NewNbP);
-  std::vector<permlib::dom_int> eListInv (NewNbP);
+  std::vector<Tidx> eListNext(NewNbP);
+  std::vector<Tidx> eListInv (NewNbP);
   for (int iP=0; iP<NewNbP; iP++) {
     DualMedialDE eDE=NewListDE[iP];
     int eDE1=eDE.eDE1;
@@ -428,12 +433,12 @@ InfoDualMedialGraph DualMedialGraphOriented(PlanGraphOriented const& PL)
       nextDE={nextDE1, nextDE2, -1};
       invDE={eDE1, eDE2, 1};
     }
-    eListNext[iP]=permlib::dom_int(DualMedialDE_to_int(nextDE));
-    eListInv [iP]=permlib::dom_int(DualMedialDE_to_int(invDE));
+    eListNext[iP] = DualMedialDE_to_int(nextDE);
+    eListInv [iP] = DualMedialDE_to_int(invDE);
   }
-  permlib::Permutation NewPermNext(eListNext);
-  permlib::Permutation NewPermInv (eListInv);
-  PlanGraphOriented PLnew{NewNbP, NewPermInv, NewPermNext};
+  Telt NewPermNext(eListNext);
+  Telt NewPermInv (eListInv);
+  PlanGraphOriented<Telt> PLnew{NewNbP, NewPermInv, NewPermNext};
   MyMatrix<int> DecomposeOldDE(nbP,2);
   for (int iDE=0; iDE<nbP; iDE++) {
     int iDE2=eNext.at(iDE);
@@ -448,19 +453,21 @@ InfoDualMedialGraph DualMedialGraphOriented(PlanGraphOriented const& PL)
   return {PLnew, NewListDE, MappingDE, DecomposeOldDE};
 }
 
-
+template<typename Telt>
 struct InfoVertFaceGraph {
-  PlanGraphOriented PL;
+  PlanGraphOriented<Telt> PL;
   std::vector<DEvertface> ListDE;
   MyMatrix<int> OldToNew;
 };
 
 
-InfoVertFaceGraph VertFaceGraphOriented(PlanGraphOriented const& PL)
+template<typename Telt>
+InfoVertFaceGraph<Telt> VertFaceGraphOriented(PlanGraphOriented<Telt> const& PL)
 {
-  permlib::Permutation eNext=PL.next;
-  permlib::Permutation ePrev=~eNext;
-  permlib::Permutation eInv =PL.invers;
+  using Tidx = typename Telt::Tidx;
+  Telt eNext = PL.next;
+  Telt ePrev = Inverse(eNext);
+  Telt eInv = PL.invers;
   int nbP=PL.nbP;
   auto DEvertface_to_int=[&](DEvertface const& eDE) -> int {
     return eDE.iDE + nbP*eDE.nat;
@@ -480,8 +487,8 @@ InfoVertFaceGraph VertFaceGraphOriented(PlanGraphOriented const& PL)
   std::vector<DEvertface> NewListDE(NewNbP);
   for (int i=0; i<NewNbP; i++)
     NewListDE[i]=int_to_DEvertface(i);
-  std::vector<permlib::dom_int> eListNext(NewNbP);
-  std::vector<permlib::dom_int> eListInv (NewNbP);
+  std::vector<Tidx> eListNext(NewNbP);
+  std::vector<Tidx> eListInv (NewNbP);
   for (int iP=0; iP<NewNbP; iP++) {
     DEvertface eDE=NewListDE[iP];
     int iDE=eDE.iDE;
@@ -503,8 +510,8 @@ InfoVertFaceGraph VertFaceGraphOriented(PlanGraphOriented const& PL)
       nextDE={iDE2,2};
       invDE={iDE,1};
     }
-    eListNext[iP]=permlib::dom_int(DEvertface_to_int(nextDE));
-    eListInv [iP]=permlib::dom_int(DEvertface_to_int(invDE));
+    eListNext[iP] = DEvertface_to_int(nextDE);
+    eListInv [iP] = DEvertface_to_int(invDE);
   }
   Telt NewPermNext(eListNext);
   Telt NewPermInv (eListInv);
@@ -512,8 +519,8 @@ InfoVertFaceGraph VertFaceGraphOriented(PlanGraphOriented const& PL)
   return {PLnew, NewListDE, OldToNew};
 }
 
-
-GraphSparseImmutable PlanGraphOrientedToGSI(VEForiented const& VEFori)
+template<typename Telt>
+GraphSparseImmutable PlanGraphOrientedToGSI(VEForiented<Telt> const& VEFori)
 {
   int nbVert=VEFori.nbVert;
   std::vector<int> ListDeg(nbVert);
@@ -523,11 +530,11 @@ GraphSparseImmutable PlanGraphOrientedToGSI(VEForiented const& VEFori)
     nbAdj += siz;
     ListDeg[iVert]=siz;
   }
-  std::vector<int> ListStart(nbVert+1);
+  std::vector<size_t> ListStart(nbVert+1);
   ListStart[0]=0;
   for (int iVert=0; iVert<nbVert; iVert++)
     ListStart[iVert+1]=ListStart[iVert] + ListDeg[iVert];
-  std::vector<int> ListListAdj(nbAdj);
+  std::vector<size_t> ListListAdj(nbAdj);
   int idx=0;
   for (int iVert=0; iVert<nbVert; iVert++) {
     int siz=VEFori.VertSet[iVert].size();

@@ -148,9 +148,9 @@ ExternalFaceInfo PLANE_ReadViewFile(std::string const& FileName)
   return {eNature, ListDE};
 }
 
-
+template<typename Telt>
 struct CombinatorialToolPL {
-  VEForiented VEFori;
+  VEForiented<Telt> VEFori;
   std::function<std::vector<int>(int const&)> MapNativeDE;
   std::function<std::vector<int>(int const&)> GetListVert;
   std::function<std::vector<int>(ExternalFaceInfo const&)> GetListVertRemove;
@@ -159,7 +159,8 @@ struct CombinatorialToolPL {
 };
 
 
-CombinatorialToolPL COMBI_PL_GeneralCase(PlanGraphOriented const& PL)
+template<typename Telt>
+CombinatorialToolPL<Telt> COMBI_PL_GeneralCase(PlanGraphOriented<Telt> const& PL)
 {
   auto ePair1=GetWythoff123(PL);
   auto ePair2=InsertVertexAllEdges(ePair1.PL);
@@ -174,8 +175,7 @@ CombinatorialToolPL COMBI_PL_GeneralCase(PlanGraphOriented const& PL)
   PrintInformationOfMap(std::cerr, ePair2.PL);
   std::cerr << "ePair3.PL=\n";
   PrintInformationOfMap(std::cerr, ePair3.PL);
-  
-  
+
   int pos1_00=ePair1.SmallMat(0,0);
   int pos1_10=ePair1.SmallMat(1,0);
   int pos1_01=ePair1.SmallMat(0,1);
@@ -336,6 +336,7 @@ CombinatorialToolPL COMBI_PL_GeneralCase(PlanGraphOriented const& PL)
 }
 
 
+template<typename Telt>
 void CreateSVGfileOfGraph(FullNamelist const& eFull)
 {
   //
@@ -354,7 +355,7 @@ void CreateSVGfileOfGraph(FullNamelist const& eFull)
   double width=BlPLOT.ListDoubleValues.at("width");
   double exponent=BlPLOT.ListDoubleValues.at("exponent");
   double SphereRotationRad=BlPLOT.ListDoubleValues.at("SphereRotationRad");
-  PlanGraphOriented PL=ReadPlanGraphOrientedFile(PlaneFile);
+  PlanGraphOriented PL=ReadPlanGraphOrientedFile<Telt>(PlaneFile);
   std::vector<std::string> ListExportFormat=BlPLOT.ListListStringValues.at("ListExportFormat");
   // EDGE
   SingleBlock BlEDGE=eFull.ListBlock.at("EDGE");
@@ -397,7 +398,7 @@ void CreateSVGfileOfGraph(FullNamelist const& eFull)
     std::cerr << "Maybe buggy map or a map of genus >1 that has not been programmed yet\n";
     throw TerminalException{1};
   }
-  CombinatorialToolPL eCombi=COMBI_PL_GeneralCase(PL);
+  CombinatorialToolPL<Telt> eCombi=COMBI_PL_GeneralCase(PL);
   //
   // General: reading colors and other properties
   //
@@ -668,7 +669,7 @@ void CreateSVGfileOfGraph(FullNamelist const& eFull)
     double shiftY=BlTOR.ListDoubleValues.at("shiftY");
     bool DrawFundamentalDomain=BlTOR.ListBoolValues.at("DrawFundamentalDomain");
     int nbTranslate=10;
-    TD_description eDesc1=TD_FindDescriptionDirect(eCombi.VEFori.PLori, minimal, MAX_ITER_PrimalDual, tol);
+    TD_description<Telt> eDesc1 = TD_FindDescriptionDirect(eCombi.VEFori.PLori, minimal, MAX_ITER_PrimalDual, tol);
     bool ApplyCaGeProcess;
     double fracArea=TD_GetMaximalAreaFraction(eDesc1);
     std::cerr << "fracArea=" << fracArea << "\n";
@@ -679,13 +680,13 @@ void CreateSVGfileOfGraph(FullNamelist const& eFull)
     if (CaGeProcessPolicy == 2)
       if (fracArea > MaximalFractionArea)
 	ApplyCaGeProcess=true;
-    TD_description eDesc2;
+    TD_description<Telt> eDesc2;
     if (ApplyCaGeProcess)
       eDesc2=TD_CaGeProcessOptimization(eDesc1, MAX_ITER_CaGe, AreaToKoef);
     else
       eDesc2=eDesc1;
-    TD_description eDesc3=TD_CanonicalizationOperation(eDesc2);
-    TD_description eDescF=TD_SimilitudeOperation(eDesc3, AngDeg, eScal, shiftX, shiftY);
+    TD_description<Telt> eDesc3=TD_CanonicalizationOperation(eDesc2);
+    TD_description<Telt> eDescF=TD_SimilitudeOperation(eDesc3, AngDeg, eScal, shiftX, shiftY);
     auto translatePoint=[&](coor const& ePt, int const& i0, int const& i1) -> coor {
       coor ePointB=ePt;
       ePointB.x += i0*eDescF.TransLatt(0,0) + i1*eDescF.TransLatt(0,1);

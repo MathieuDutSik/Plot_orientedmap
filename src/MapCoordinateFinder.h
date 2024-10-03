@@ -222,7 +222,8 @@ PLANE_plot_infos PLANE_RotationSphericalStructure(PLANE_plot_infos const& eStr, 
 }
 
 
-PLANE_plot_infos PLANE_ComputeCoordinateVertices(VEForiented const& VEFori, std::vector<int> const& ListKillVert, std::vector<int> const& TheCycle, int const& MAX_ITERATIONS, std::function<double(double const&)> const& AreaToKoef)
+template<typename Telt>
+PLANE_plot_infos PLANE_ComputeCoordinateVertices(VEForiented<Telt> const& VEFori, std::vector<int> const& ListKillVert, std::vector<int> const& TheCycle, int const& MAX_ITERATIONS, std::function<double(double const&)> const& AreaToKoef)
 {
   int nbVert=VEFori.nbVert;
   std::vector<int> ListStatus(nbVert,1);
@@ -378,10 +379,10 @@ TD_result TD_SeveralMinimization(Tgr const& eG, double const& minimal, int const
   }
 }
 
-
+template<typename Telt>
 struct TD_description {
   std::vector<coor> ListCoord;
-  VEForiented VEFori;
+  VEForiented<Telt> VEFori;
   MyMatrix<double> TransLatt;
   MyMatrix<int> ShiftMatrix;
 };
@@ -403,8 +404,8 @@ MyMatrix<double> TD_RotateBasis(MyMatrix<double> const& TransM, double const& An
   return TransLatt;
 }
 
-
-TD_description TD_SimilitudeOperation(TD_description const& eDesc, double const& AngDeg, double const& eScal, double const& shiftX, double const& shiftY)
+template<typename Telt>
+TD_description<Telt> TD_SimilitudeOperation(TD_description<Telt> const& eDesc, double const& AngDeg, double const& eScal, double const& shiftX, double const& shiftY)
 {
   double AngRad=M_PI*(AngDeg/double(180));
   double cosAng=cos(AngRad);
@@ -423,8 +424,8 @@ TD_description TD_SimilitudeOperation(TD_description const& eDesc, double const&
   return {ListCoordTot, eDesc.VEFori, TransLatt, eDesc.ShiftMatrix};
 }
 
-
-TD_description TD_CanonicalizationOperation(TD_description const& eDesc)
+template<typename Telt>
+TD_description<Telt> TD_CanonicalizationOperation(TD_description<Telt> const& eDesc)
 {
   int iVector=-1;
   double eNormFind=0;
@@ -462,8 +463,8 @@ TD_description TD_CanonicalizationOperation(TD_description const& eDesc)
   return TD_SimilitudeOperation(eDesc, AngDeg, scal, double(0), double(0));
 }
 
-
-std::vector<double> TD_GetListTriangleArea(TD_description const& eDesc)
+template<typename Telt>
+std::vector<double> TD_GetListTriangleArea(TD_description<Telt> const& eDesc)
 {
   int nbFace=eDesc.VEFori.nbFace;
   std::vector<double> ListArea(nbFace);
@@ -501,7 +502,8 @@ std::vector<double> TD_GetListTriangleArea(TD_description const& eDesc)
 }
 
 
-double TD_GetMaximalAreaFraction(TD_description const& eDesc)
+template<typename Telt>
+double TD_GetMaximalAreaFraction(TD_description<Telt> const& eDesc)
 {
   std::vector<double> ListArea=TD_GetListTriangleArea(eDesc);
   double maxArea=VectorMax(ListArea);
@@ -511,7 +513,8 @@ double TD_GetMaximalAreaFraction(TD_description const& eDesc)
 }
 
 
-TD_description TD_CaGeProcessOptimization(TD_description const& eDesc, int const& MAX_ITERATIONS, std::function<double(double const&)> const& AreaToKoef)
+template<typename Telt>
+TD_description<Telt> TD_CaGeProcessOptimization(TD_description<Telt> const& eDesc, int const& MAX_ITERATIONS, std::function<double(double const&)> const& AreaToKoef)
 {
   //  int nbP=eDesc.VEFori.ListOriginVert.size();
   std::cerr << "Begin TD_CaGeProcessOptimization\n";
@@ -616,7 +619,7 @@ T L1_norm(MyVector<T> const& V)
 
 
 template<typename Telt>
-TD_description TD_FindDescription(PlanGraphOriented<Telt> const& PL, double const& minimal, int const& MAX_ITERATIONS, double const& tol)
+TD_description<Telt> TD_FindDescription(PlanGraphOriented<Telt> const& PL, double const& minimal, int const& MAX_ITERATIONS, double const& tol)
 {
   Telt eInv = PL.invers;
   Telt eNext = PL.next;
@@ -795,13 +798,13 @@ TD_description TD_FindDescription(PlanGraphOriented<Telt> const& PL, double cons
   return {ListCoordTot, VEFori, TheBasis, ShiftMatrix};
 }
 
-
-TD_description TD_FindDescriptionDirect(PlanGraphOriented const& PL, double const& minimal, int const& MAX_ITERATIONS, double const& tol)
+template<typename Telt>
+TD_description<Telt> TD_FindDescriptionDirect(PlanGraphOriented<Telt> const& PL, double const& minimal, int const& MAX_ITERATIONS, double const& tol)
 {
   int nbP=PL.nbP;
   auto VEFori=PlanGraphOrientedToVEF(PL);
   InfoDualMedialGraph DualMedInfo=DualMedialGraphOriented(PL);
-  TD_description eDesc=TD_FindDescription(DualMedInfo.PL, minimal, MAX_ITERATIONS, tol);
+  TD_description<Telt> eDesc=TD_FindDescription(DualMedInfo.PL, minimal, MAX_ITERATIONS, tol);
   int nbVert=VEFori.nbVert;
   std::vector<coor> ListCoordTot(nbVert);
   for (int iVert=0; iVert<nbVert; iVert++) {
