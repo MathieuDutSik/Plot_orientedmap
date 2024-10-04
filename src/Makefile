@@ -2,7 +2,6 @@ PROGRAM = CombPlaneToSVG
 
 OBJECTS		= $(PROGRAM:%=%.o)
 
-#CC		= clang++ -Weverything -std=c++11
 CC		= g++ -std=c++17 -Wall -g -O2
 
 NOLINKFLAG 	= -c
